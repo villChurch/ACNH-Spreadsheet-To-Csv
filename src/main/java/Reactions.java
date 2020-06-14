@@ -1,5 +1,6 @@
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.model.CellData;
+import com.google.api.services.sheets.v4.model.Spreadsheet;
 import lombok.Setter;
 import lombok.SneakyThrows;
 import lombok.var;
@@ -21,58 +22,12 @@ class Reactions {
     }
     @SneakyThrows
     void getReactions() {
-        Sheets.Spreadsheets.Get request = sheetsService.spreadsheets().get(SPREADSHEET_ID);
-        request.setRanges(Collections.singletonList("Reactions"));
-        request.setIncludeGridData(true);
-
-        var imageResponse = request.execute();
-
-        var testImage = imageResponse.getSheets().get(0).getData().get(0).getRowData().get(2).getValues().get(1).getUserEnteredValue().getFormulaValue().split("https://")[1].split(".png")[0];
-
-        var newHeaders = imageResponse.getSheets().get(0).getData().get(0).getRowData().get(0).getValues();
-        var newResponses = imageResponse.getSheets().get(0).getData().get(0).getRowData();
-        newResponses.remove(0);
-
-        StringBuilder newSb = new StringBuilder();
-        File newOutput = new File("Reactions.csv");
-        FileWriter testNewOutputWriter = new FileWriter(newOutput);
-
-        for (var item: newHeaders){
-            if(null != item.getUserEnteredValue().getFormulaValue()){
-                String value = item.getUserEnteredValue().getFormulaValue().split("https://")[1].split(".png")[0];
-                value = "https://" + value + ".png";
-                newSb.append(value).append(",");
-            } else {
-                var value = item.getUserEnteredValue().getStringValue();
-                value = value.replace(' ', '_');
-                value = value.replace('/', '_');
-                newSb.append(value).append(",");
-            }
-        }
-
-        testNewOutputWriter.append(newSb.toString());
-        testNewOutputWriter.append(System.lineSeparator());
-        newSb.setLength(0);
-
-        for (var item : newResponses) {
-            List<CellData> rowData = item.getValues();
-            for(int i = 0; i < rowData.size(); i ++) {
-                try {
-                    if (i == 1) {
-                        String value = rowData.get(i).getUserEnteredValue().getFormulaValue().split("https://")[1].split(".png")[0];
-                        value = "https://" + value + ".png";
-                        newSb.append(value).append(",");
-                    } else {
-                        newSb.append(rowData.get(i).getUserEnteredValue().getStringValue()).append(",");
-                    }
-                } catch (NullPointerException ex) {
-                    newSb.append(",");
-                }
-            }
-            testNewOutputWriter.append(newSb.toString());
-            testNewOutputWriter.append(System.lineSeparator());
-            newSb.setLength(0);
-        }
-        testNewOutputWriter.close();
+        GetSpreadsheetData getSpreadsheetData =
+                new GetSpreadsheetData(sheetsService, "Reactions", SPREADSHEET_ID);
+        Spreadsheet response = getSpreadsheetData.getSpreadsheetsInformation();
+        List<Integer> imageLocations = Collections.singletonList(1);
+        File file = new File("Reactions.csv");
+        WriteSpreadsheetDataToFile writeData = new WriteSpreadsheetDataToFile(response, file, imageLocations);
+        writeData.writeDataToFile();
     }
 }

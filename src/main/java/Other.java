@@ -1,33 +1,29 @@
 import com.google.api.services.sheets.v4.Sheets;
-import com.google.api.services.sheets.v4.model.CellData;
 import com.google.api.services.sheets.v4.model.Spreadsheet;
 import lombok.Setter;
-import lombok.SneakyThrows;
-import lombok.var;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Setter
-class Villager {
+public class Other {
 
     private Sheets sheetsService;
     private String SPREADSHEET_ID;
 
-    Villager(Sheets sheetsService, String SPREADSHEET_ID) {
+    Other (Sheets sheetsService, String SPREADSHEET_ID) {
         this.setSheetsService(sheetsService);
         this.setSPREADSHEET_ID(SPREADSHEET_ID);
     }
 
-    @SneakyThrows
-    void getVillagers() {
+    public void getOther() {
         GetSpreadsheetData getSpreadsheetData =
-                new GetSpreadsheetData(sheetsService, "Villagers", SPREADSHEET_ID);
+                new GetSpreadsheetData(sheetsService, "Other", SPREADSHEET_ID);
         Spreadsheet response = getSpreadsheetData.getSpreadsheetsInformation();
-        File file = new File("Villagers.csv");
-        List<Integer> imageLocations = Arrays.asList(1,2,3);
+        List<Integer> imageLocations = Arrays.asList(1,2);
+        File file = new File("Other.csv");
         WriteSpreadsheetDataToFile writeData = new WriteSpreadsheetDataToFile(response, file, imageLocations);
         writeData.writeDataToFile();
     }

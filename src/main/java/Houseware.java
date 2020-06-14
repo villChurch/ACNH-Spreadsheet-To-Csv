@@ -10,19 +10,19 @@ import java.util.Collections;
 import java.util.List;
 
 @Setter
-class Reactions {
-
+class Houseware {
     private Sheets sheetsService;
     private String SPREADSHEET_ID;
 
-    Reactions(Sheets sheetsService, String SPREADSHEET_ID) {
+    Houseware(Sheets sheetsService, String SPREADSHEET_ID) {
         this.setSheetsService(sheetsService);
         this.setSPREADSHEET_ID(SPREADSHEET_ID);
     }
+
     @SneakyThrows
-    void getReactions() {
+    void getHouseware() {
         Sheets.Spreadsheets.Get request = sheetsService.spreadsheets().get(SPREADSHEET_ID);
-        request.setRanges(Collections.singletonList("Reactions"));
+        request.setRanges(Collections.singletonList("Housewares"));
         request.setIncludeGridData(true);
 
         var imageResponse = request.execute();
@@ -34,7 +34,7 @@ class Reactions {
         newResponses.remove(0);
 
         StringBuilder newSb = new StringBuilder();
-        File newOutput = new File("Reactions.csv");
+        File newOutput = new File("housewareV2.csv");
         FileWriter testNewOutputWriter = new FileWriter(newOutput);
 
         for (var item: newHeaders){

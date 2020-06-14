@@ -10,19 +10,20 @@ import java.util.Collections;
 import java.util.List;
 
 @Setter
-class Reactions {
+class Villager {
 
     private Sheets sheetsService;
     private String SPREADSHEET_ID;
 
-    Reactions(Sheets sheetsService, String SPREADSHEET_ID) {
+    Villager(Sheets sheetsService, String SPREADSHEET_ID) {
         this.setSheetsService(sheetsService);
         this.setSPREADSHEET_ID(SPREADSHEET_ID);
     }
+
     @SneakyThrows
-    void getReactions() {
+    void getVillagers() {
         Sheets.Spreadsheets.Get request = sheetsService.spreadsheets().get(SPREADSHEET_ID);
-        request.setRanges(Collections.singletonList("Reactions"));
+        request.setRanges(Collections.singletonList("Villagers"));
         request.setIncludeGridData(true);
 
         var imageResponse = request.execute();
@@ -34,7 +35,7 @@ class Reactions {
         newResponses.remove(0);
 
         StringBuilder newSb = new StringBuilder();
-        File newOutput = new File("Reactions.csv");
+        File newOutput = new File("villagers.csv");
         FileWriter testNewOutputWriter = new FileWriter(newOutput);
 
         for (var item: newHeaders){
@@ -58,7 +59,7 @@ class Reactions {
             List<CellData> rowData = item.getValues();
             for(int i = 0; i < rowData.size(); i ++) {
                 try {
-                    if (i == 1) {
+                    if (i == 1 || i == 2 || i == 3) {
                         String value = rowData.get(i).getUserEnteredValue().getFormulaValue().split("https://")[1].split(".png")[0];
                         value = "https://" + value + ".png";
                         newSb.append(value).append(",");

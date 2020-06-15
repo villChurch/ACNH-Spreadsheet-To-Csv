@@ -22,6 +22,8 @@ Details of how to automatically create a Google Cloud Project and get your Clien
 ## Using the compiled version
 If you are happy running the compiled jar using my Google Cloud Project then just run the java file and login through the browser when prompted to authorise the app.
 
+Jar file can be downloaded from the latest release which can be found [here](https://github.com/villChurch/ACNH-Spreadsheet-To-Csv/releases).
+
 Then just naviaget to where the jar file is and run `java -jar jar file here`, eg `java -jar spreadsheet_to_csv-1.0-SNAPSHOT.jar`.
 
 # Output

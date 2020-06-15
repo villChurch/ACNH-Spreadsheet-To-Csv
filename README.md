@@ -4,7 +4,7 @@ Convert acnh spreadsheet to seperate csv files
 # Prerequisites 
 
 * A google account - needed for oauth so the app read the sheet
-* Java 8
+* Java 8 or higher
 * Optional - If you chose to self compile you will need maven, needs to be Maven version 3 or higher
 
 # Installing Java 8

@@ -1,3 +1,8 @@
+![Test maven build](https://github.com/villChurch/ACNH-Spreadsheet-To-Csv/workflows/Test%20maven%20build/badge.svg)
+[![GitHub issues](https://img.shields.io/github/issues/villChurch/ACNH-Spreadsheet-To-Csv)](https://github.com/villChurch/ACNH-Spreadsheet-To-Csv/issues)
+[![GitHub forks](https://img.shields.io/github/forks/villChurch/ACNH-Spreadsheet-To-Csv)](https://github.com/villChurch/ACNH-Spreadsheet-To-Csv/network)
+[![GitHub license](https://img.shields.io/github/license/villChurch/ACNH-Spreadsheet-To-Csv)](https://github.com/villChurch/ACNH-Spreadsheet-To-Csv/blob/master/LICENSE)
+
 # ACNH-Spreadsheet-To-Csv
 Convert acnh spreadsheet to seperate csv files
 

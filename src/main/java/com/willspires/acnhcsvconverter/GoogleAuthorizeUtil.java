@@ -20,7 +20,7 @@ import java.util.List;
 class GoogleAuthorizeUtil {
 
     static Credential authorize() throws IOException, GeneralSecurityException {
-        InputStream in = GoogleAuthorizeUtil.class.getResourceAsStream("/google-sheets-client-secret.json");
+        InputStream in = GoogleAuthorizeUtil.class.getResourceAsStream("/igoogle-sheets-client-secret.json");
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JacksonFactory.getDefaultInstance(), new InputStreamReader(in));
 
         List<String> scopes = Collections.singletonList(SheetsScopes.SPREADSHEETS);

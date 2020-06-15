@@ -33,13 +33,13 @@ This should also fetch out the image links and place them in the image fields.
 
 # Notes
 
-Some of the columns names have been changed to string spaces and `/`'s and replace them with `_`'s.
+Some of the columns names have been changed to strip spaces and `/`'s and replace them with `_`'s.
 
 Also this code is just a quick script I knocked up to get the sheets as csv's and therefore has lots of room for improvements.
 
-I may improve it in future, depends if I need to, but feel free to create a pull request if you want to.
+I may improve it in future, depends if I need/want to, but feel free to create a pull request if you want to.
 
 # Contributors
 
-* All the people over at the [ACNH Spreadsheet discord](https://discord.gg/DHGJuz) who have contributed towards the sheet https://tinyurl.com/acnh-sheet
-* [ACNHCDN](https://acnhcdn.com/) for hosting the images found in the sheet and export links
+* All the people over at the [ACNH Spreadsheet discord](https://discord.gg/DHGJuz) who have contributed towards the sheet which can be found [here](https://tinyurl.com/acnh-sheet)
+* [ACNHCDN](https://acnhcdn.com/) for hosting the images found in the exported links

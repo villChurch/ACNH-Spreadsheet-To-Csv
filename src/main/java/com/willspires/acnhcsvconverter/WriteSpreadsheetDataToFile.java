@@ -9,6 +9,7 @@ import lombok.var;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Collections;
 import java.util.List;
 
 @Setter
@@ -65,7 +66,8 @@ public class WriteSpreadsheetDataToFile {
                         value = "https://" + value + ".png";
                         stringBuilder.append(value);
                     } else {
-                        stringBuilder.append(rowData.get(i).getUserEnteredValue().getStringValue());
+//                        stringBuilder.append(rowData.get(i).getUserEnteredValue().getStringValue());
+                        stringBuilder.append(rowData.get(i).getFormattedValue());
                     }
                 } catch (NullPointerException ignored) {
                 }

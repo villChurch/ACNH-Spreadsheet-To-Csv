@@ -70,5 +70,9 @@ public class Program {
         construction.getConstruction();
         Achievements achievements = new Achievements(sheetsService, SPREADSHEET_ID);
         achievements.getAchievements();
+        SeaCreatures seaCreatures = new SeaCreatures(sheetsService, SPREADSHEET_ID);
+        seaCreatures.getSeaCreatures();
+        ClothingOther clothingOther = new ClothingOther(sheetsService, SPREADSHEET_ID);
+        clothingOther.getOtherClothing();
     }
 }

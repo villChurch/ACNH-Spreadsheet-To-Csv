@@ -23,7 +23,7 @@ public class Fish {
         GetSpreadsheetData getSpreadsheetData =
                 new GetSpreadsheetData(sheetsService, "Fish", SPREADSHEET_ID);
         Spreadsheet response = getSpreadsheetData.getSpreadsheetsInformation();
-        List<Integer> imageLocations = Arrays.asList(1,2,3);
+        List<Integer> imageLocations = Arrays.asList(2,3,4);
         File file = new File("Fish.csv");
         WriteSpreadsheetDataToFile writeData = new WriteSpreadsheetDataToFile(response, file, imageLocations);
         writeData.writeDataToFile();

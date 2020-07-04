@@ -32,7 +32,7 @@ Jar file can be downloaded from the latest release which can be found [here](htt
 Then just naviaget to where the jar file is and run `java -jar jar file here`, eg `java -jar spreadsheet_to_csv-1.0-SNAPSHOT.jar`.
 
 # Output
-The output will be 30 CSVs, one for each sheet, that will be placed in the same directory as the jar file.
+The output will be a number of CSVs, one for each sheet, that will be placed in the same directory as the jar file.
 
 This should also fetch out the image links and place them in the image fields.
 

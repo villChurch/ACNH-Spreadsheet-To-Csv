@@ -2,6 +2,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/villChurch/ACNH-Spreadsheet-To-Csv)](https://github.com/villChurch/ACNH-Spreadsheet-To-Csv/issues)
 [![GitHub forks](https://img.shields.io/github/forks/villChurch/ACNH-Spreadsheet-To-Csv)](https://github.com/villChurch/ACNH-Spreadsheet-To-Csv/network)
 [![GitHub license](https://img.shields.io/github/license/villChurch/ACNH-Spreadsheet-To-Csv)](https://github.com/villChurch/ACNH-Spreadsheet-To-Csv/blob/master/LICENSE)
+[![DepShield Badge](https://depshield.sonatype.org/badges/villChurch/ACNH-Spreadsheet-To-Csv/depshield.svg)](https://depshield.github.io)
 
 # ACNH-Spreadsheet-To-Csv
 Convert acnh spreadsheet to seperate csv files
